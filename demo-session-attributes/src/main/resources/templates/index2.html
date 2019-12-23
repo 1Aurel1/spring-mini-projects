@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+
+    <ul>
+        <th:block th:each="todo : ${todos}">
+            <li th:text="${todo.name}" ></li>
+        </th:block>
+    </ul>
+
+    <form action="#" th:action="@{/inBean/}" th:object="${newTodo}" method="post">
+        <label>
+            Task name:
+            <input type="text" th:field="*{name}" />
+            <input type="submit" value="Sent" />
+        </label>
+    </form>
+
+</body>
+</html>
